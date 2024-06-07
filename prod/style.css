@@ -1,3 +1,5 @@
+* {box-sizing: border-box;}
+
 body {
   display: flex;
   width: 100%;
@@ -7,6 +9,11 @@ body {
   align-items: center;
   flex-shrink: 0;
   background: #80D6BD;
+  font-family: Paralucent;
+}
+
+body > h1, body > p {
+  color: #1A3850;
 }
 
 .container {
@@ -16,9 +23,9 @@ body {
   gap: 8px;
   flex-shrink: 0;
   align-self: stretch;
-  padding: 16px;
+  padding: 0 16px;
+  width: 100%;
   max-width: 512px;
-  min-width: 420px;
   margin: 0 auto;
 }
 
@@ -41,3 +48,82 @@ body {
   align-items: center;
   gap: 8px;
 }
+
+.column.right {
+  display: flex;
+align-self: stretch;
+
+}
+
+.column.right > div {
+  flex-direction: column;
+}
+
+.player {
+  display: flex;
+  padding: 0px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  align-self: stretch;
+
+  > p {
+    margin: 0;
+    color: #1A3850;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .avatar {
+    background: #1A3850;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    margin-top: 8px;
+  }
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid rgba(214, 179, 138, 0.20);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.node > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  background: #F6E9D6;
+  height: 38px;
+}
+
+.node > div > p {
+  color: #D6B38A;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.node.active > div {
+  border-top: 4px solid #F0B833;
+  border-bottom: 4px solid #F0B833;
+  background: #1A3850;
+  height: 38px;
+}
+
+.node.active > div > p {
+  color: #F0B833;
+  font-weight: 700;
+}
+
