@@ -65,25 +65,31 @@ align-self: stretch;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   flex: 1 0 0;
   align-self: stretch;
 
   > p {
     margin: 0;
     color: #1A3850;
-    font-size: 18px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
 
   .avatar {
-    background: #1A3850;
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     border-radius: 64px;
     margin-top: 8px;
+    background: #F6E9D6;
+    border: 1px solid #F0DEC7;
+  }
+
+  #emoji {
+    font-size: 80px;
+    line-height: 80px;
   }
 }
 

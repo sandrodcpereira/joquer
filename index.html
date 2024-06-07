@@ -106,7 +106,8 @@
 		<div class="column right">
 			
 			<div class="bg-beige player">
-				<div class="avatar"></div>
+				<!--div class="avatar"></div-->
+				<p id="emoji">🥺</p>
 				<p id="player">Sandro</p>
 			</div>
 
@@ -266,11 +267,21 @@
 		        }
 		    }
 
-		    // Call the function to update the player name on page load
+		    // Function to update the #emoji element with the emoji from the URL parameter
+		    function updateEmoji() {
+		        const emoji = getParameterByName('emoji');
+		        if (emoji) {
+		            const emojiElement = document.getElementById('emoji');
+		            if (emojiElement) {
+		                emojiElement.textContent = emoji;
+		            }
+		        }
+		    }
+
+		    // Call the functions to update the player name and emoji on page load
 		    updatePlayerName();
+		    updateEmoji();
 		});
-
-
 
 	</script>	
 </body>
