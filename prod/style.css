@@ -1,3 +1,8 @@
+html {
+  background: #80D6BD;
+  height: 100vh;
+}
+
 * {
   box-sizing: border-box;
   -webkit-user-select: none;
@@ -17,14 +22,19 @@ body {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  background: #80D6BD;
+  touch-action: manipulation;
 }
 
 body > h1, body > p {
   color: #1A3850;
+  margin: 0;
 }
 
-h1 {font-weight: 900;}
+h1 {
+  font-weight: 900;
+}
+
+body > p {margin-bottom: 24px;}
 
 .container {
   display: flex;
@@ -33,7 +43,7 @@ h1 {font-weight: 900;}
   gap: 8px;
   flex-shrink: 0;
   align-self: stretch;
-  padding: 0 16px;
+  padding: 16px;
   width: 100%;
   max-width: 512px;
   margin: 0 auto;
@@ -78,29 +88,30 @@ align-self: stretch;
   gap: 0;
   flex: 1 0 0;
   align-self: stretch;
+  padding-top: 4px;
+}
 
-  > p {
-    margin: 0;
-    color: #1A3850;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
+.player > p {
+  margin: 0;
+  color: #1A3850;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
-  .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 64px;
-    margin-top: 8px;
-    background: #F6E9D6;
-    border: 1px solid #F0DEC7;
-  }
+.player > .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 64px;
+  margin-top: 8px;
+  background: #F6E9D6;
+  border: 1px solid #F0DEC7;
+}
 
-  #emoji {
-    font-size: 80px;
-    line-height: 80px;
-  }
+.player > #emoji {
+  font-size: 80px;
+  line-height: 80px;
 }
 
 .node {
