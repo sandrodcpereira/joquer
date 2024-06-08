@@ -172,72 +172,39 @@
 	<script>
 
 		document.addEventListener('DOMContentLoaded', (event) => {
-		    console.log('DOM fully loaded and parsed');
-
-		    // Select all .tier elements
 		    const tiers = document.querySelectorAll('.tier');
-
-		    console.log(`Found ${tiers.length} .tier elements`);
-
-		    // Add event listener to each .tier element
 		    tiers.forEach(tier => {
-		        tier.addEventListener('click', function(event) {
-		            // Find the closest .node element from the event target
+		        tier.addEventListener('touchstart', function(event) {
 		            const node = event.target.closest('.node');
-		            
-		            // Check if a .node element was clicked
 		            if (node && tier.contains(node)) {
-		                console.log('Clicked on a .node element');
-
-		                // Remove .active class from all .node elements within this .tier
 		                const nodes = tier.querySelectorAll('.node');
 		                nodes.forEach(node => node.classList.remove('active'));
-
-		                // Add .active class to the clicked .node element
 		                node.classList.add('active');
-		                console.log('Added .active class to the clicked .node element');
 		            }
 		        });
 		    });
 		});
 
-
 		document.addEventListener('DOMContentLoaded', (event) => {
-		    console.log('DOM fully loaded and parsed');
-
-		    // Select all .jokers elements
 		    const jokers = document.querySelectorAll('.jokers');
-
-		    console.log(`Found ${jokers.length} .jokers elements`);
-
-		    // Add event listener to each .jokers element
 		    jokers.forEach(joker => {
-		        joker.addEventListener('click', function(event) {
-		            // Find the closest .node element from the event target
+		        joker.addEventListener('touchstart', function(event) {
 		            const node = event.target.closest('.node');
-
-		            // Check if a .node element was clicked and it's within the current .jokers container
 		            if (node && joker.contains(node)) {
-		                console.log('Clicked on a .node element within .jokers');
-
-		                // Toggle .active class on the clicked .node element
 		                node.classList.toggle('active');
-		                console.log('Toggled .active class on the clicked .node element');
 		            }
 		        });
 		    });
 		});
 
 		document.addEventListener('DOMContentLoaded', (event) => {
-		    // Function to format the current date as DD/MM/YYYY
 		    function formatDate(date) {
 		        const day = String(date.getDate()).padStart(2, '0');
-		        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+		        const month = String(date.getMonth() + 1).padStart(2, '0');
 		        const year = date.getFullYear();
 		        return `${day}/${month}/${year}`;
 		    }
 
-		    // Function to update the #current-date element with the formatted current date
 		    function updateCurrentDate() {
 		        const currentDateElement = document.getElementById('current-date');
 		        if (currentDateElement) {
@@ -245,13 +212,10 @@
 		            currentDateElement.textContent = formatDate(today);
 		        }
 		    }
-
-		    // Call the function to update the date on page load
 		    updateCurrentDate();
 		});
 
 		document.addEventListener('DOMContentLoaded', (event) => {
-		    // Function to get a URL parameter by name
 		    function getParameterByName(name) {
 		        const url = window.location.href;
 		        name = name.replace(/[\[\]]/g, '\\$&');
@@ -262,7 +226,6 @@
 		        return decodeURIComponent(results[2].replace(/\+/g, ' '));
 		    }
 
-		    // Function to update the #player element with the player name from the URL parameter
 		    function updatePlayerName() {
 		        const playerName = getParameterByName('player');
 		        if (playerName) {
@@ -273,7 +236,6 @@
 		        }
 		    }
 
-		    // Function to update the #emoji element with the emoji from the URL parameter
 		    function updateEmoji() {
 		        const emoji = getParameterByName('emoji');
 		        if (emoji) {
@@ -283,19 +245,14 @@
 		            }
 		        }
 		    }
-
-		    // Call the functions to update the player name and emoji on page load
 		    updatePlayerName();
 		    updateEmoji();
 		});
 
 		document.addEventListener('DOMContentLoaded', function() {
-            // Get the refresh button element by its ID
             var refreshButton = document.getElementById('restart');
             
-            // Add a click event listener to the button
             refreshButton.addEventListener('click', function() {
-                // Refresh the page
                 location.reload();
             });
         });
