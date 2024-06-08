@@ -34,6 +34,11 @@ h1 {
   font-weight: 900;
 }
 
+#restart {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 body > p {margin-bottom: 24px;}
 
 .container {
