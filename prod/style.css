@@ -22,7 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  touch-action: manipulation;
+  /*touch-action: manipulation;*/
 }
 
 body > h1, body > p {
@@ -76,8 +76,7 @@ body > p {margin-bottom: 24px;}
 
 .column.right {
   display: flex;
-align-self: stretch;
-
+  align-self: stretch;
 }
 
 .column.right > div {
