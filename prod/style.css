@@ -129,6 +129,11 @@ body > p {margin-bottom: 24px;}
   cursor: pointer;
 }
 
+.tier > .node.bet {
+  outline: 2px solid #1A3850;
+  outline-offset: 2px;
+}
+
 .node > div {
   display: flex;
   justify-content: center;

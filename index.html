@@ -262,12 +262,60 @@
         // audio player 
 
         const audioDiv = document.getElementById('audio');
-    const audioPlayer = document.getElementById('audioPlayer');
+	    const audioPlayer = document.getElementById('audioPlayer');
 
-    // Add an event listener to play the audio when the div is clicked
-    audioDiv.addEventListener('click', () => {
-        audioPlayer.play();
+	    // Add an event listener to play the audio when the div is clicked
+	    audioDiv.addEventListener('click', () => {
+	        audioPlayer.play();
+	    });
+
+
+
+// Get all the elements with the class 'node'
+    const nodes = document.querySelectorAll('.tier .node');
+
+    let pressTimer; // To store the timeout for long press
+    const longPressDuration = 500; // Duration in milliseconds for a long press
+
+    nodes.forEach(node => {
+        // Function to handle adding/removing .bet class
+        const addBetClass = function() {
+            // Remove the .bet class from all nodes
+            nodes.forEach(n => n.classList.remove('bet'));
+            // Add the .bet class to the pressed node
+            this.classList.add('bet');
+        };
+
+        // Handle long press for desktop (mouse)
+        node.addEventListener('mousedown', function() {
+            pressTimer = setTimeout(() => {
+                addBetClass.call(this);
+            }, longPressDuration);
+        });
+
+        // Handle long press for touch devices (mobile)
+        node.addEventListener('touchstart', function() {
+            pressTimer = setTimeout(() => {
+                addBetClass.call(this);
+            }, longPressDuration);
+        });
+
+        // Clear the timer if the user releases the click/touch early (before long press is complete)
+        node.addEventListener('mouseup', function() {
+            clearTimeout(pressTimer);
+        });
+        node.addEventListener('mouseleave', function() {
+            clearTimeout(pressTimer);
+        });
+        node.addEventListener('touchend', function() {
+            clearTimeout(pressTimer);
+        });
+        node.addEventListener('touchmove', function() {
+            clearTimeout(pressTimer); // Cancel if the user moves their finger
+        });
     });
+
+
 
 	</script>	
 </body>
