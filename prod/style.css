@@ -127,6 +127,20 @@ body > p {margin-bottom: 24px;}
   border: 1px solid rgba(214, 179, 138, 0.20);
   overflow: hidden;
   cursor: pointer;
+  padding: 0;
+  transition: transform .1s ease;
+}
+
+.node:active {
+  transform: scale(0.98);
+}
+
+.node:active > div {
+  background: #ECD9BF;
+}
+
+.node.active:active > div {
+  background: #092032;
 }
 
 .tier > .node.bet {
@@ -141,6 +155,7 @@ body > p {margin-bottom: 24px;}
   align-self: stretch;
   background: #F6E9D6;
   height: 38px;
+  transition: background .1s ease;
 }
 
 .node > div > p {
@@ -149,6 +164,7 @@ body > p {margin-bottom: 24px;}
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  font-family: "paralucent", sans-serif;
 }
 
 .node.active > div {
