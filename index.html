@@ -118,8 +118,10 @@
 			</div>
 
 			<div class="bg-beige tier">
+
+				<audio id="audioPlayer" src="assets/audio.m4a" preload="auto"></audio>
 				
-				<div class="node">
+				<div class="node" id="audio">
 					<div>
 						<p>50,000</p>
 					</div>
@@ -174,7 +176,7 @@
 		document.addEventListener('DOMContentLoaded', (event) => {
 		    const tiers = document.querySelectorAll('.tier');
 		    tiers.forEach(tier => {
-		        tier.addEventListener('touchstart', function(event) {
+		        tier.addEventListener('click', function(event) {
 		            const node = event.target.closest('.node');
 		            if (node && tier.contains(node)) {
 		                const nodes = tier.querySelectorAll('.node');
@@ -188,7 +190,7 @@
 		document.addEventListener('DOMContentLoaded', (event) => {
 		    const jokers = document.querySelectorAll('.jokers');
 		    jokers.forEach(joker => {
-		        joker.addEventListener('touchstart', function(event) {
+		        joker.addEventListener('click', function(event) {
 		            const node = event.target.closest('.node');
 		            if (node && joker.contains(node)) {
 		                node.classList.toggle('active');
@@ -256,6 +258,16 @@
                 location.reload();
             });
         });
+
+        // audio player 
+
+        const audioDiv = document.getElementById('audio');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    // Add an event listener to play the audio when the div is clicked
+    audioDiv.addEventListener('click', () => {
+        audioPlayer.play();
+    });
 
 	</script>	
 </body>
